@@ -21,6 +21,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 
+Route::redirect("/redirect","/api/test");
 
 Route::get("/test", function(Request $request){
 	return strval($request);
