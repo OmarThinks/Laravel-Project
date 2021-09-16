@@ -31,11 +31,21 @@ Route::get('/hi/json/', function () {
 // Render Blade PHP Response
 Route::get('/products/', function () {
     
+
+
+	$products =[
+		["name"=>"Labtop","price"=>"50"],
+		["name"=>"Mobile","price"=>"20"],
+		["name"=>"Desktop","price"=>"100"],
+		["name"=>"Table","price"=>"30"],
+	];
+
     $page_inputs = 
     [
     	"title"=>"Products List",
     	"heading"=>"All Products",
-    	"just_a_number"=>1
+    	"just_a_number"=>1,
+    	"products"=>$products
     ];
 
 
