@@ -5,7 +5,7 @@
 </head>
 <body>
 
-<h1>{{ $title }}</h1>
+<h1>{{ $heading }}:</h1>
 
 <ol>
 	<li>Products 1</li>
