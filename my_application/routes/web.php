@@ -30,7 +30,11 @@ Route::get('/hi/json/', function () {
 
 // Render Blade PHP Response
 Route::get('/products/', function () {
-    return view("products_list");
+    
+    $page_inputs = ["title"=>"Products List"];
+
+
+    return view("products_list",$page_inputs);
 });
 
 

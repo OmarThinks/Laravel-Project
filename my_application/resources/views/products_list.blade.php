@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Products List</title>
+	<title>{{ $title }}</title>
 </head>
 <body>
 
-<h1>Products list</h1>
+<h1>{{ $title }}</h1>
 
 <ol>
 	<li>Products 1</li>
