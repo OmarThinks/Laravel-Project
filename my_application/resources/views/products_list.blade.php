@@ -2,16 +2,49 @@
 <html>
 <head>
 	<title>{{ $title }}</title>
+
+<style type="text/css">
+table, th, td{
+	border-collapse: collapse;
+	border:solid 1px black;
+	padding: 3px;
+}
+
+
+
+
+</style>
+
+
 </head>
 <body>
 
 <h1>{{ $heading }}:</h1>
 
-<ol>
-	<li>Products 1</li>
-	<li>Products 2</li>
-	<li>Products 3</li>
-</ol>
+
+
+<table>
+	<tr>
+		<th>Index</th>
+		<th>Name</th>
+		<th>Price</th>
+	</tr>
+
+
+
+
+
+
+@foreach($products as $key=>$product)
+
+<tr> <th>{{ $key }}</th> 
+	<td>{{ $product["name"] }} </td> 
+<td>${{$product["price"]}}</td>
+
+@endforeach
+
+</table>
+
 
 
 
