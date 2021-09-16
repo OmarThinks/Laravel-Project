@@ -18,13 +18,19 @@ Route::get('/', function () {
 });
 
 // Return String Response
-Route::get('/hi', function () {
+Route::get('/hi/', function () {
     return "Wassup!";
 });
 
 // Return json Response
-Route::get('/hi/json', function () {
+Route::get('/hi/json/', function () {
     return ["message"=>"Wassup"];
+});
+
+
+// Return Blade PHP Response
+Route::get('/hello/', function () {
+    return view("hello_world");
 });
 
 
