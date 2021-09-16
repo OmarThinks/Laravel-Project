@@ -34,7 +34,8 @@ Route::get('/products/', function () {
     $page_inputs = 
     [
     	"title"=>"Products List",
-    	"heading"=>"All Products"
+    	"heading"=>"All Products",
+    	"just_a_number"=>1
     ];
 
 
