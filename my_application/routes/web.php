@@ -28,9 +28,9 @@ Route::get('/hi/json/', function () {
 });
 
 
-// Return Blade PHP Response
-Route::get('/hello/', function () {
-    return view("hello_world");
+// Render Blade PHP Response
+Route::get('/products/', function () {
+    return view("products_list");
 });
 
 
