@@ -1,9 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Products Application</title>
-</head>
-<body>
+@extends("layouts.layout")
+
+
+
+@section("content")
 
 
 <div>
@@ -22,7 +21,4 @@
 
 
 
-
-</body>
-</html>
-
+@endsection

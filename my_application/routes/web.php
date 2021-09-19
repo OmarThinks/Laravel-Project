@@ -14,7 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    $page_inputs = 
+    [
+        "title"=>"Home",
+    ];
+
+    return view('home',$page_inputs);
 });
 
 // Return String Response
