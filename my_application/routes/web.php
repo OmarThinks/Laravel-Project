@@ -40,15 +40,7 @@ Route::get('/products/', [ProductsController::class, 'index']);
 
 
 
-Route::get('/products/{id}', function ($id) {
-    $page_inputs = 
-    [
-        "title"=>"Product Details",
-        "id"=>$id
-    ];
-
-    return view("products_details",$page_inputs);
-});
+Route::get('/products/{id}', [ProductsController::class, 'show']);
 
 
 
