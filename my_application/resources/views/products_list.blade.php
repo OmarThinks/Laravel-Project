@@ -1,23 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>{{ $title }}</title>
-
-<style type="text/css">
-table, th, td{
-	border-collapse: collapse;
-	border:solid 1px black;
-	padding: 3px;
-}
+@extends("layouts.layout")
 
 
+@section("content")
 
-
-</style>
-
-
-</head>
-<body>
 
 <h1>{{ $heading }}:</h1>
 
@@ -90,5 +75,6 @@ echo $heading;
 
 </div>
 
-</body>
-</html>
+
+
+@endsection
