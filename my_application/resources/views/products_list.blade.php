@@ -8,7 +8,7 @@
 
 
 <p>
-Hello, !
+Hello, {{$name}}!
 </p>
 
 

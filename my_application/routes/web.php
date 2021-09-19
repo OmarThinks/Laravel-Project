@@ -51,7 +51,7 @@ Route::get('/products/', function (Request $request) {
     	"heading"=>"All Products",
     	"just_a_number"=>1,
     	"products"=>$products,
-        //"name"=> $name
+        "name"=> $name
     ];
 
 
