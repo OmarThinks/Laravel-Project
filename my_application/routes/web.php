@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use App\Http\Controllers\ProductsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,29 +35,7 @@ Route::get('/hi/json/', function () {
 
 
 // Render Blade PHP Response
-Route::get('/products/', function (Request $request) {
-    $name = $request->query('name', 'Unknown');
-    #$name = Input::get("name");
-    error_log($name);
-    $products =[
-        ["name"=>"Labtop","price"=>"50"],
-        ["name"=>"Mobile","price"=>"20"],
-        ["name"=>"Desktop","price"=>"100"],
-        ["name"=>"Table","price"=>"30"],
-    ];
-
-    $page_inputs = 
-    [
-        "title"=>"Products List",
-        "heading"=>"All Products",
-        "just_a_number"=>1,
-        "products"=>$products,
-        "name"=> $name
-    ];
-
-
-    return view("products_list",$page_inputs);
-});
+Route::get('/products/', [ProductsController::class, 'index']);
 
 
 
