@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,10 +34,10 @@ Route::get('/hi/json/', function () {
 
 
 // Render Blade PHP Response
-Route::get('/products/', function () {
-    
-
-
+Route::get('/products/', function (Request $request) {
+    $name = $request->query('name', 'Helen');
+    #$name = Input::get("name");
+    error_log($name);
 	$products =[
 		["name"=>"Labtop","price"=>"50"],
 		["name"=>"Mobile","price"=>"20"],
@@ -50,7 +50,8 @@ Route::get('/products/', function () {
     	"title"=>"Products List",
     	"heading"=>"All Products",
     	"just_a_number"=>1,
-    	"products"=>$products
+    	"products"=>$products,
+        //"name"=> $name
     ];
 
 

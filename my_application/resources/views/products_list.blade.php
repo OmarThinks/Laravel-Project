@@ -7,6 +7,12 @@
 <h1>{{ $heading }}:</h1>
 
 
+<p>
+Hello, !
+</p>
+
+
+
 
 <table>
 	<tr>
