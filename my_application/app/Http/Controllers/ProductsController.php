@@ -27,7 +27,7 @@ class ProductsController extends Controller
 	    ];
 
 
-	    return view("products_list",$page_inputs);
+	    return view("products.list",$page_inputs);
 	}
 
 
@@ -41,6 +41,6 @@ class ProductsController extends Controller
 	        "product"=>$product
 	    ];
 
-	    return view("products_details",$page_inputs);
+	    return view("products.details",$page_inputs);
 	}
 }
