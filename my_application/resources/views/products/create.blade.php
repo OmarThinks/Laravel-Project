@@ -18,6 +18,7 @@
 <div>
 
 <form method="POST" action="/products">
+	@csrf
 <div>
 	<label>Name:</label>
 	<input type="text" name="name">

@@ -53,4 +53,9 @@ class ProductsController extends Controller
 
 	    return view("products.create",$page_inputs);
 	}
+	public function store()
+	{
+
+	    return redirect("/products");
+	}
 }
