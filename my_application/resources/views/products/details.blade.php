@@ -41,6 +41,17 @@ Price:
 
 
 
+<div>
+	<form method="DELETE">
+		<input type="submit" value="Delete This Product">
+	</form>
+</div>
+
+
+
+
+
+
 
 
 
