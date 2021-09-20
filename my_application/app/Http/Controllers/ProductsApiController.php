@@ -11,6 +11,7 @@ class ProductsApiController extends Controller
     public function index()
     {
     	$products=Product::all();
-    	return $products;
+    	#return $products;
+    	return Product::paginate(2);
     }
 }
