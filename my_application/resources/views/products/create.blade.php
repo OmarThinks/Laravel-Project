@@ -21,7 +21,7 @@
 </div>
 <div>
 	<label>Price:</label>
-	<textarea name="price"></textarea>
+	<input type="number" name="price" step="0.01"></input>
 </div>
 
 
