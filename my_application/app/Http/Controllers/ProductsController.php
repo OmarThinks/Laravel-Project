@@ -14,13 +14,6 @@ class ProductsController extends Controller
 		$name = $request->query('name', 'Unknown');
 	    #$name = Input::get("name");
 	    error_log($name);
-	    
-	    /*$products =[
-	        ["name"=>"Labtop","price"=>"50"],
-	        ["name"=>"Mobile","price"=>"20"],
-	        ["name"=>"Desktop","price"=>"100"],
-	        ["name"=>"Table","price"=>"30"],
-	    ];*/
 
 	    $products=Product::all();
 
@@ -41,10 +34,11 @@ class ProductsController extends Controller
 
 	public function show($id)
 	{
+		$product =  Product::find($id);
 	    $page_inputs = 
 	    [
 	        "title"=>"Product Details",
-	        "id"=>$id
+	        "product"=>$product
 	    ];
 
 	    return view("products_details",$page_inputs);

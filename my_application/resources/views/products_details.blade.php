@@ -3,6 +3,6 @@
 @section("content")
 
 Product Id is:
-{{$id}}
+{{$product->id}}
 
 @endsection
