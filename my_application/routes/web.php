@@ -45,6 +45,7 @@ Route::delete('/products/{id}', [ProductsController::class, 'destroy']);
 
 
 Route::get('/api/products/', [ProductsApiController::class, 'index']);
+Route::post('/api/products/', [ProductsApiController::class, 'store']);
 
 
 
