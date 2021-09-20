@@ -43,4 +43,14 @@ class ProductsController extends Controller
 
 	    return view("products.details",$page_inputs);
 	}
+	
+	public function create()
+	{
+	    $page_inputs = 
+	    [
+	        "title"=>"Create Product",
+	    ];
+
+	    return view("products.create",$page_inputs);
+	}
 }
