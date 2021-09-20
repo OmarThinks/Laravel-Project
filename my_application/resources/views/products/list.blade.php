@@ -4,7 +4,27 @@
 @section("content")
 
 
+
+
+
+
 <h1>{{ $heading }}:</h1>
+
+
+
+
+
+
+
+<div>
+	<a href="/products/create">Create a new Product</a>
+</div>
+
+
+
+
+
+
 
 
 <p>
