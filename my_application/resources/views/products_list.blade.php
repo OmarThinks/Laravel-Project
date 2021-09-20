@@ -19,6 +19,7 @@ Hello, {{$name}}!
 		<th>Index</th>
 		<th>Name</th>
 		<th>Price</th>
+		<th>Link</th>
 	</tr>
 
 
@@ -29,8 +30,9 @@ Hello, {{$name}}!
 @foreach($products as $key=>$product)
 
 <tr> <th>{{ $key }}</th> 
-	<td>{{ $product["name"] }} </td> 
-<td>${{$product["price"]}}</td>
+	<td>{{ $product->name }} </td> 
+<td>${{$product->price}}</td>
+<td><a href="/products/{{$product->id}}">/products/{{$product->id}}</a></td>
 
 @endforeach
 
