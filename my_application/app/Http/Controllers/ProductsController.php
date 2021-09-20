@@ -34,7 +34,7 @@ class ProductsController extends Controller
 
 	public function show($id)
 	{
-		$product =  Product::find($id);
+		$product =  Product::findOrFail($id);
 	    $page_inputs = 
 	    [
 	        "title"=>"Product Details",
