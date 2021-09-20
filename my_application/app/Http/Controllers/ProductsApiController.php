@@ -20,10 +20,14 @@ class ProductsApiController extends Controller
         'description' => ['required',"min:3",'max:2000',"string"],
         'price' => ['required',"min:.01",'max:100000',"numeric"]
     	]);
-    	error_log($validatedData["name"]);
-    	return true;
-
     	
+    	$product = new Product();
+		$product->name = $validatedData["name"];
+		$product->description = $validatedData["description"];
+		$product->price = $validatedData["price"];
+		$product->save();
+
+    	return ["success"=>true,"message"=>"product created successfully"];
     }
 
 
