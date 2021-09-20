@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\ProductsApiController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,6 +42,10 @@ Route::post('/products/', [ProductsController::class, 'store']);
 Route::get('/products/create', [ProductsController::class, 'create']);
 Route::get('/products/{id}', [ProductsController::class, 'show']);
 Route::delete('/products/{id}', [ProductsController::class, 'destroy']);
+
+
+Route::get('/api/products/', [ProductsApiController::class, 'index']);
+
 
 
 
