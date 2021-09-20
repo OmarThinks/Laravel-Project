@@ -48,7 +48,7 @@ class ProductsController extends Controller
 	{
 	    $page_inputs = 
 	    [
-	        "title"=>"Create Product",
+	        "title"=>"Create a new Product",
 	    ];
 
 	    return view("products.create",$page_inputs);
