@@ -53,8 +53,9 @@ class ProductsController extends Controller
 
 	    return view("products.create",$page_inputs);
 	}
-	public function store()
+	public function store(Request $request)
 	{
+		error_log($request->input('name'));
 
 	    return redirect("/products");
 	}
