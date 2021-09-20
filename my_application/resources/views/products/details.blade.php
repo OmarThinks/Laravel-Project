@@ -42,7 +42,9 @@ Price:
 
 
 <div>
-	<form method="DELETE">
+	<form method="POST">
+	@csrf
+	@method("DELETE")
 		<input type="submit" value="Delete This Product">
 	</form>
 </div>
