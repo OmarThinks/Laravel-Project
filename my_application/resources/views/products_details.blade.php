@@ -46,5 +46,11 @@ Price:
 
 </div>
 
+<div>
+
+<a href="/products"> <-Products List</a>
+
+</div>
+
 
 @endsection
