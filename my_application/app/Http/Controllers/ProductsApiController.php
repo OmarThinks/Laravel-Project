@@ -16,10 +16,11 @@ class ProductsApiController extends Controller
     public function store(Request $request)
     {
     	$validatedData = $request->validate([
-        'name' => ['required','max:200',"string"],
-        'description' => ['required','max:200',"string"],
-        'price' => ['required',"numeric"]
+        'name' => ['required',"min:3",'max:200',"string"],
+        'description' => ['required',"min:3",'max:2000',"string"],
+        'price' => ['required',"min:.01",'max:100000',"numeric"]
     	]);
+    	error_log($validatedData["name"]);
     	return true;
 
     	

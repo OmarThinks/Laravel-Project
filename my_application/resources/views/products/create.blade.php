@@ -49,7 +49,29 @@
 function createProduct(event)
 {
 	event.preventDefault();
-	console.log("I will create a product");
+
+var settings = {
+  "url": "/api/products/",
+  "method": "POST",
+  "timeout": 0,
+  "headers": {
+    "Content-Type": "application/json",
+    //"XSRF-TOKEN="+document.querySelectorAll('[name="_token"]')[0].value
+  'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+  },
+  "data": JSON.stringify({
+  	"name":name_input.value,
+  	"description":description_input.value,
+  	"price":price_input.value,
+  }),
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+
+
+
 }
 </script>
 
