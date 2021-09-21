@@ -107,7 +107,8 @@ The products model has these fields:
 
 ## C-2) API Endpoints:
 
-### C-2-1) (GET) http://127.0.0.1:8000/api/products/
+### C-2-1) (GET) http://127.0.0.1:8000/api/products/ 
+**No Authentication required.**  
 
 
 This endpoint return a list of paginated products.  
@@ -178,6 +179,8 @@ Example:
 
 
 ### C-2-2) (POST) http://127.0.0.1:8000/api/products/
+**Requires Authentication.**  
+
 
 
 This endpoint is used to create a new product.  
@@ -226,5 +229,11 @@ It expects these Inputs:
 
 
 
+
+### C-2-3) (DELETE) http://127.0.0.1:8000/api/products/{id}
+**Requires Authentication.**  
+
+
+This endpoint deletes the product with this id.
 
 
