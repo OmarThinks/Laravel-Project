@@ -36,7 +36,7 @@ Hello, {{$name}}!
 
 <table>
 	<tr>
-		<th>Index</th>
+		<th>Id</th>
 		<th>Name</th>
 		<th>Price</th>
 		<th>Link</th>
@@ -49,7 +49,7 @@ Hello, {{$name}}!
 
 @foreach($products as $key=>$product)
 
-<tr> <th>{{ $key }}</th> 
+<tr> <th>{{ $product->id }}</th> 
 	<td>{{ $product->name }} </td> 
 <td>${{$product->price}}</td>
 <td><a href="/products/{{$product->id}}">/products/{{$product->id}}</a></td>
