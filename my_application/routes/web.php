@@ -38,13 +38,13 @@ Route::get('/hi/json/', function () {
 
 // Render Blade PHP Response
 Route::get('/products/', [ProductsController::class, 'index']);
-Route::get('/products/create', [ProductsController::class, 'create']);
+Route::get('/products/create', [ProductsController::class, 'create'])->middleware("auth");
 Route::get('/products/{id}', [ProductsController::class, 'show']);
 
 
 Route::get('/api/products/', [ProductsApiController::class, 'index']);
-Route::post('/api/products/', [ProductsApiController::class, 'store']);
-Route::delete('/api/products/{id}', [ProductsApiController::class, 'destroy']);
+Route::post('/api/products/', [ProductsApiController::class, 'store'])->middleware("auth");
+Route::delete('/api/products/{id}', [ProductsApiController::class, 'destroy'])->middleware("auth");
 
 
 

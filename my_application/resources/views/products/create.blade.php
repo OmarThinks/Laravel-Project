@@ -97,9 +97,9 @@ $.ajax(settings)
   window.location.replace("/products/");
 })
 .catch((err)=>{
-  console.log("catching");
+  //console.log("catching");
   errors = err.responseJSON.errors;
-  console.log(errors);
+  //console.log(errors);
   for(const field_name in errors)
   {
     console.log(field_name);
@@ -109,7 +109,7 @@ $.ajax(settings)
       errors_html+=`<li>${field_errors[field_error]}</li>`;
     }
     document.getElementById(`${field_name}_input_errors`).innerHTML=errors_html;
-    console.log(errors_html);
+    //console.log(errors_html);
   }
 
 })
