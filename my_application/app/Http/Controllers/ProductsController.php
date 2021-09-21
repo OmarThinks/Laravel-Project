@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use Illuminate\Support\Facades\Auth;
 
 class ProductsController extends Controller
 {
@@ -17,15 +18,16 @@ class ProductsController extends Controller
 
 	    $products=Product::all();
 
+
 	    $page_inputs = 
 	    [
 	        "title"=>"Products List",
 	        "heading"=>"All Products",
 	        "just_a_number"=>1,
 	        "products"=>$products,
-	        "name"=> $name
+	        "name"=> $name,
+	        "logged_in"=>Auth::check()
 	    ];
-
 
 	    return view("products.list",$page_inputs);
 	}
@@ -38,7 +40,8 @@ class ProductsController extends Controller
 	    $page_inputs = 
 	    [
 	        "title"=>"Product Details",
-	        "product"=>$product
+	        "product"=>$product,
+	        "logged_in"=>Auth::check()
 	    ];
 
 	    return view("products.details",$page_inputs);
@@ -49,6 +52,7 @@ class ProductsController extends Controller
 	    $page_inputs = 
 	    [
 	        "title"=>"Create a new Product",
+	        "logged_in"=>Auth::check()
 	    ];
 
 	    return view("products.create",$page_inputs);

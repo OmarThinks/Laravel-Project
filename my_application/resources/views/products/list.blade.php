@@ -13,14 +13,11 @@
 
 
 
-
-
-
+@if($logged_in)
 <div>
 	<a href="/products/create">Create a new Product</a>
 </div>
-
-
+@endif
 
 
 

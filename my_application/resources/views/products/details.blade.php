@@ -41,12 +41,21 @@ Price:
 
 
 
+
+
+
+
+
+
+
+@if($logged_in)
 <div>
 <form onsubmit="return deleteProduct(event)">
-	@csrf
-		<input type="submit" value="Delete This Product">
-	</form>
+  @csrf
+    <input type="submit" value="Delete This Product">
+  </form>
 </div>
+@endif
 
 
 
