@@ -8,14 +8,15 @@
 
 1. php
 2. Laravel
-3. Eloquent
-4. Migrations
-5. Pagination
-6. Validation
-7. API
-8. Authentication
-9. HTML
-10. JavaScript
+3. Blade
+4. Eloquent
+5. Migrations
+6. Pagination
+7. Validation
+8. API
+9. Authentication
+10. HTML
+11. JavaScript
 
 
 </b>
@@ -235,5 +236,60 @@ It expects these Inputs:
 
 
 This endpoint deletes the product with this id.
+
+
+
+
+
+
+
+
+# D) Frontend:
+
+
+## D-1) http://127.0.0.1:8000/:
+This is the home page.
+
+
+
+<img src="images/home_page.gif">
+
+
+## D-2) http://127.0.0.1:8000/products:
+
+Displays a list of products page.  
+You can create products or view product details.
+
+
+<img src="images/products_list.gif">
+
+
+
+## D-3) http://127.0.0.1:8000/products/create:
+
+**Requires Authentication**
+
+
+<img src="images/create_product.gif">
+
+There is also validation.
+
+
+<img src="images/create_product_validation.gif">
+
+
+
+
+## D-4) http://127.0.0.1:8000/products/{id}:
+
+Display details of a product.  
+Also you can delete a product from this page. (If you are logged in)
+
+
+
+<img src="images/product_details.gif">
+
+
+
 
 
