@@ -30,6 +30,13 @@ class ProductsApiController extends Controller
     	return ["success"=>true,"message"=>"product created successfully"];
     }
 
+	public function destroy($id)
+	{
+		$product = Product::findOrFail($id);
 
+		$product->delete();
+    	return ["success"=>true,"message"=>"product deleted successfully"];
+
+	}
 
 }

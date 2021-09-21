@@ -42,9 +42,8 @@ Price:
 
 
 <div>
-	<form method="POST">
+<form onsubmit="return deleteProduct(event)">
 	@csrf
-	@method("DELETE")
 		<input type="submit" value="Delete This Product">
 	</form>
 </div>
@@ -64,6 +63,38 @@ Price:
 <a href="/products"> <-Products List</a>
 
 </div>
+
+
+
+
+
+<script type="text/javascript">
+
+function deleteProduct(event)
+{
+	event.preventDefault();
+
+var settings = {
+  "url": "/api/products/{{$product->id}}",
+  "method": "DELETE",
+  "timeout": 0,
+  "headers": {
+    "Content-Type": "application/json",
+    //"XSRF-TOKEN="+document.querySelectorAll('[name="_token"]')[0].value
+  'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+  },
+};
+
+$.ajax(settings).done(function (response) {
+  window.location.replace("/products/");
+});
+
+
+
+}
+</script>
+
+
 
 
 @endsection

@@ -41,11 +41,11 @@ Route::get('/products/', [ProductsController::class, 'index']);
 Route::post('/products/', [ProductsController::class, 'store']);
 Route::get('/products/create', [ProductsController::class, 'create']);
 Route::get('/products/{id}', [ProductsController::class, 'show']);
-Route::delete('/products/{id}', [ProductsController::class, 'destroy']);
 
 
 Route::get('/api/products/', [ProductsApiController::class, 'index']);
 Route::post('/api/products/', [ProductsApiController::class, 'store']);
+Route::delete('/api/products/{id}', [ProductsApiController::class, 'destroy']);
 
 
 
