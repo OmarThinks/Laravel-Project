@@ -23,14 +23,14 @@
 	<label>Name:</label>
 	<input type="text" name="name" id="name_input">
   <div>
-    <ul class="errors" id="name_input_errors"></ul>
+    <ul class="validation_errors" id="name_input_errors"></ul>
   </div>
 </div>
 <div>
 	<label>Description:</label>
 	<textarea name="description" id="description_input"></textarea>
   <div>
-    <ul class="errors" id="description_input_errors">error</ul>
+    <ul class="validation_errors" id="description_input_errors"></ul>
   </div>
 </div>
 <div>
@@ -38,7 +38,7 @@
 	<input type="number" id="price_input" 
 	name="price" step="0.01"></input>
   <div>
-    <ul class="errors" id="price_input_errors"></ul>
+    <ul class="validation_errors" id="price_input_errors"></ul>
   </div>
 </div>
 
@@ -55,10 +55,27 @@
 
 
 <script type="text/javascript">
+
+
+function clearErrors()
+{
+  validation_errors = document.getElementsByClassName('validation_errors');
+  for (var i = validation_errors.length - 1; i >= 0; i--) {
+    validation_errors[i].innerHTML="";
+  }
+}
+
+
+
+
+
+
+
+
 function createProduct(event)
 {
 	event.preventDefault();
-
+  clearErrors();
 var settings = {
   "url": "/api/products/",
   "method": "POST",
@@ -80,13 +97,29 @@ $.ajax(settings)
   window.location.replace("/products/");
 })
 .catch((err)=>{
-  console.log(err.responseJSON.errors);
+  console.log("catching");
+  errors = err.responseJSON.errors;
+  console.log(errors);
+  for(const field_name in errors)
+  {
+    console.log(field_name);
+    field_errors = errors[field_name];
+    let errors_html = "";
+    for(const field_error in field_errors){
+      errors_html+=`<li>${field_errors[field_error]}</li>`;
+    }
+    document.getElementById(`${field_name}_input_errors`).innerHTML=errors_html;
+    console.log(errors_html);
+  }
+
 })
 ;
-
-
-
 }
+
+
+clearErrors();
+
+
 </script>
 
 

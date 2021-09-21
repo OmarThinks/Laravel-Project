@@ -4,6 +4,6 @@ table, th, td{
 	padding: 3px;
 }
 
-.errors{
+.validation_errors{
 	color: red;
 }
