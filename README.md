@@ -177,3 +177,54 @@ Example:
 
 
 
+### C-2-2) (POST) http://127.0.0.1:8000/api/products/
+
+
+This endpoint is used to create a new product.  
+
+
+It expects these Inputs:
+
+
+1. **`name`**
+	- Type: string
+	- required: True
+	- minimum Length: 3 Chars
+	- maximum Length: 200 Chars
+2. **`description`**
+	- Type: string
+	- required: True
+	- minimum Length: 3 Chars
+	- maximum Length: 2000 Chars
+3. **`price`**
+	- Type: float
+	- required: True
+	- minimum: .01
+	- maximum: 100000
+
+**Eaxmple response:**
+
+
+<b>
+
+```json
+{
+	"message":"The given data was invalid.",
+	"errors":
+	{
+		"name":["The name must not be greater than 200 characters."],
+		"description":["The description field is required."],
+		"price":["The price must be at least .01."]
+	}
+}
+```
+
+</b>
+
+
+
+
+
+
+
+
