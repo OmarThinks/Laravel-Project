@@ -53,17 +53,4 @@ class ProductsController extends Controller
 
 	    return view("products.create",$page_inputs);
 	}
-	public function store(Request $request)
-	{
-		error_log($request->input('name'));
-
-		$product = new Product();
-		$product->name = $request->input('name');
-		$product->description = $request->input('description');
-		$product->price = $request->input('price');
-
-		$product->save();
-
-	    return redirect("/products");
-	}
 }

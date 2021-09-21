@@ -38,7 +38,6 @@ Route::get('/hi/json/', function () {
 
 // Render Blade PHP Response
 Route::get('/products/', [ProductsController::class, 'index']);
-Route::post('/products/', [ProductsController::class, 'store']);
 Route::get('/products/create', [ProductsController::class, 'create']);
 Route::get('/products/{id}', [ProductsController::class, 'show']);
 
