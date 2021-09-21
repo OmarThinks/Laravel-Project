@@ -22,15 +22,24 @@
 <div>
 	<label>Name:</label>
 	<input type="text" name="name" id="name_input">
+  <div>
+    <ul class="errors" id="name_input_errors"></ul>
+  </div>
 </div>
 <div>
 	<label>Description:</label>
 	<textarea name="description" id="description_input"></textarea>
+  <div>
+    <ul class="errors" id="description_input_errors">error</ul>
+  </div>
 </div>
 <div>
 	<label>Price:</label>
 	<input type="number" id="price_input" 
 	name="price" step="0.01"></input>
+  <div>
+    <ul class="errors" id="price_input_errors"></ul>
+  </div>
 </div>
 
 
@@ -66,9 +75,14 @@ var settings = {
   }),
 };
 
-$.ajax(settings).done(function (response) {
+$.ajax(settings)
+.done(function (response) {
   window.location.replace("/products/");
-});
+})
+.catch((err)=>{
+  console.log(err.responseJSON.errors);
+})
+;
 
 
 
