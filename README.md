@@ -99,13 +99,77 @@ The products model has these fields:
 		<td>False</td>
 		<td>-</td>
 	</tr>
-
-
 </table>
 
 
 
 
+
+## C-2) API Endpoints:
+
+### C-2-1) (GET) http://127.0.0.1:8000/api/products/
+
+
+This endpoint return a list of paginated products.  
+10 products per page.  
+Example:
+
+<b>
+
+```json
+{
+  "current_page": 1,
+  "data": [
+    {
+      "id": 2,
+      "created_at": null,
+      "updated_at": null,
+      "name": "GPU",
+      "description": "4Gb",
+      "price": 70.8
+    },
+    {
+      "id": 5,
+      "created_at": "2021-09-20T21:59:28.000000Z",
+      "updated_at": "2021-09-20T21:59:28.000000Z",
+      "name": "My product",
+      "description": "adwkj",
+      "price": 70
+    },
+    ...
+  ],
+  "first_page_url": "http://127.0.0.1:8000/api/products?page=1",
+  "from": 1,
+  "last_page": 1,
+  "last_page_url": "http://127.0.0.1:8000/api/products?page=1",
+  "links": [
+    {
+      "url": null,
+      "label": "&laquo; Previous",
+      "active": false
+    },
+    {
+      "url": "http://127.0.0.1:8000/api/products?page=1",
+      "label": "1",
+      "active": true
+    },
+    {
+      "url": null,
+      "label": "Next &raquo;",
+      "active": false
+    }
+  ],
+  "next_page_url": null,
+  "path": "http://127.0.0.1:8000/api/products",
+  "per_page": 10,
+  "prev_page_url": null,
+  "to": 4,
+  "total": 4
+}
+```
+
+
+</b>
 
 
 
